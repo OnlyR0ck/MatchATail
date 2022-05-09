@@ -6,7 +6,7 @@ public static class DataContainer
 {
     #region Fields
 
-    private static Dictionary<System.Type, UnityEngine.Object> dataPool = new Dictionary<System.Type, UnityEngine.Object>();
+    private static readonly Dictionary<System.Type, UnityEngine.Object> dataPool = new Dictionary<System.Type, UnityEngine.Object>();
 
     #endregion
 
@@ -15,7 +15,7 @@ public static class DataContainer
     #region Properties
 
     public static MenuIconsSequence MenuIconsSequence =>
-        GetData<MenuIconsSequence>("Data/Menu/Data_MenuItemsSequence");
+        GetData<MenuIconsSequence>("Data/Menu/Data_MenuIconsSequence");
 
     #endregion
 

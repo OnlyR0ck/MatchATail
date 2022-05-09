@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df2386b39bf3af4f959f4c061a7eb49, type: 3}
-  m_Name: Data_MenuItemsSequence
+  m_Script: {fileID: 11500000, guid: 0b925363d116746ffa1d54979e2bc5f3, type: 3}
+  m_Name: Data_MenuIconsSequence
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -34,5 +34,5 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: b2f200c4548046d46a11c7cf9d241fab, type: 3}
   - animalType: 6
     icon: {fileID: 21300000, guid: 5b119129bd163134b94ce8b0b1e1da42, type: 3}
-  menuItemPrefab: {fileID: 3545752781307767657, guid: 12a6a279aadbcc641b466793b3747a75,
+  menuItemPrefab: {fileID: 3545752781307767657, guid: c452d99496d684843a4f9489e69bd5b3,
     type: 3}

@@ -6,16 +6,16 @@ namespace ScriptableObjects.Menu
 {
     [CreateAssetMenu(fileName = "Data_MenuItemObject", menuName = "Data/Menu/MenuObject")]
     [Serializable]
-    public class MenuItemObject
+    public class AnimalItemData
     {
         [SerializeField] private AnimalType animalType;
-        [SerializeField] private Sprite icon;
+        [SerializeField] private Sprite animalIcon;
 
-        
-        
+
+
         public AnimalType AnimalType => animalType;
 
         
-        public Sprite AnimalIcon => icon;
+        public Sprite AnimalAnimalIcon => animalIcon;
     }
 }

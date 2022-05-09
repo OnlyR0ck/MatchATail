@@ -74,13 +74,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.64969736, g: 0.9433962, b: 0.92880213, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 20a28242d78d7eb429af3c126860eae2, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 71c1776039a3342ee8faa52694682fb1, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -98,7 +98,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9138756794354709493}
-  - component: {fileID: 7418295499945587045}
+  - component: {fileID: 3897621152027744980}
   m_Layer: 0
   m_Name: MenuItem
   m_TagString: Untagged
@@ -126,7 +126,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7418295499945587045
+--- !u!114 &3897621152027744980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3545752781307767657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2291e03520a641a40bd8f1e495e2dba8, type: 3}
+  m_Script: {fileID: 11500000, guid: e169a9560647d4189ae878e7529abf45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animalIcon: {fileID: 586349423178239824}
@@ -204,8 +204,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 20a28242d78d7eb429af3c126860eae2, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 71c1776039a3342ee8faa52694682fb1, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 2057868574267708414}
   - component: {fileID: 8132938289871836786}
   - component: {fileID: 1960911188553685951}
-  - component: {fileID: 8593191695443354753}
+  - component: {fileID: 1921475779420211962}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8593191695443354753
+--- !u!114 &1921475779420211962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8453399964951316081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 495362a916c5f7945a41eeec4925f309, type: 3}
+  m_Script: {fileID: 11500000, guid: 12f4767e9744f4e3f925b0d86fdde796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointerDownEase:
@@ -465,23 +465,41 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
+      time: -0.00047859736
+      value: 0.7019619
+      inSlope: -0.002713143
+      outSlope: -0.002713143
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 0.34598154
+      value: 1.1507952
+      inSlope: 0.02327655
+      outSlope: 0.02327655
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7795198
+      value: 0.906478
+      inSlope: -0.0023841858
+      outSlope: -0.0023841858
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99988043
+      value: 1.0010781
+      inSlope: -0.3260374
+      outSlope: -0.3260374
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
