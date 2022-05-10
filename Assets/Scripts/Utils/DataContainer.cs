@@ -14,8 +14,8 @@ public static class DataContainer
 
     #region Properties
 
-    public static MenuIconsSequence MenuIconsSequence =>
-        GetData<MenuIconsSequence>("Data/Menu/Data_MenuIconsSequence");
+    public static AnimalItemsSequence AnimalItemsSequence =>
+        GetData<AnimalItemsSequence>("Data/Animals/Data_AnimalItems");
 
     #endregion
 
