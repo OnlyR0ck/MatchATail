@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class MenuItemsSpawner : MonoBehaviour
 {
-    private MenuIconsSequence menuItemsSequence;
+    private AnimalItemsSequence menuItemsSequence;
     private GameObject menuItemPrefab;
     private IGameFlowService gameFlowService;
 
@@ -15,13 +15,13 @@ public class MenuItemsSpawner : MonoBehaviour
     {
         gameFlowService = ServicesHub.Container.Single<IGameFlowService>();
         
-        menuItemsSequence = DataContainer.MenuIconsSequence;
+        menuItemsSequence = DataContainer.AnimalItemsSequence;
         menuItemPrefab = menuItemsSequence.MenuItemPrefab;
     }
 
     private void Start()
     {
-        foreach (AnimalItemData menuItemObject in menuItemsSequence.MenuItemObjects)
+        foreach (AnimalItemData menuItemObject in menuItemsSequence.AnimalItems)
         {
             MenuItemController itemController = Instantiate(menuItemPrefab, transform).GetComponent<MenuItemController>();
             itemController.Initialize(menuItemObject, gameFlowService);
