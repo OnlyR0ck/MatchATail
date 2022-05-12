@@ -25,26 +25,32 @@ MonoBehaviour:
   - animalType: 1
     animalIcon: {fileID: 21300000, guid: 61817d7fe4939d04096fc2c7609dc4ff, type: 3}
     animalTailSprite: {fileID: 21300000, guid: 760a6500b7d84bc4a891bcef0c750fed, type: 3}
-    animalAnimationData: {fileID: 0}
+    animalAnimationData: {fileID: 11400000, guid: 39242485c3b5e4c428cf922f5c83a6a8,
+      type: 2}
   - animalType: 2
     animalIcon: {fileID: 21300000, guid: d5ce08c6a0392e641a962e58276ce61f, type: 3}
     animalTailSprite: {fileID: 21300000, guid: 76ee1d833d23f7c4baa3533dd873eb3a, type: 3}
-    animalAnimationData: {fileID: 0}
+    animalAnimationData: {fileID: 11400000, guid: 618952bd3223e4dca9b72a091429e6c3,
+      type: 2}
   - animalType: 3
     animalIcon: {fileID: 21300000, guid: 8788ac4a079e72641a56d94eeeb65d78, type: 3}
     animalTailSprite: {fileID: 21300000, guid: 203c956627a6c654aa0c395062a5ae3c, type: 3}
-    animalAnimationData: {fileID: 0}
+    animalAnimationData: {fileID: 11400000, guid: 58409b2e5ae5e4c088f75cad31ec3dfb,
+      type: 2}
   - animalType: 4
     animalIcon: {fileID: 21300000, guid: 4bd158303ea2182429f9101912995d33, type: 3}
     animalTailSprite: {fileID: 21300000, guid: 47a0c9a377665b642875e6cea7e173aa, type: 3}
-    animalAnimationData: {fileID: 0}
+    animalAnimationData: {fileID: 11400000, guid: 649619b5fe43c4a1e877af488b6f4020,
+      type: 2}
   - animalType: 5
     animalIcon: {fileID: 21300000, guid: b2f200c4548046d46a11c7cf9d241fab, type: 3}
     animalTailSprite: {fileID: 21300000, guid: 425e0ea3f4774404a9f440a56149f571, type: 3}
-    animalAnimationData: {fileID: 0}
+    animalAnimationData: {fileID: 11400000, guid: 86390dcb732674bd1a378d77fc728fbd,
+      type: 2}
   - animalType: 6
     animalIcon: {fileID: 21300000, guid: 5b119129bd163134b94ce8b0b1e1da42, type: 3}
     animalTailSprite: {fileID: 21300000, guid: f868314883452cd488b8fc3c63a9d55b, type: 3}
-    animalAnimationData: {fileID: 0}
+    animalAnimationData: {fileID: 11400000, guid: 06d754dc5521a4bdfa707b65701d4c77,
+      type: 2}
   menuItemPrefab: {fileID: 3545752781307767657, guid: c452d99496d684843a4f9489e69bd5b3,
     type: 3}

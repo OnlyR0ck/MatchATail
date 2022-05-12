@@ -11,12 +11,21 @@ namespace Menu
 {
     public class MenuItemController : MonoBehaviour
     {
+        private const string GameSceneName = "Game";
+        
         [SerializeField] private Image animalIcon;
         [SerializeField] private Button animalButton;
-        
+
         private IGameFlowService gameFlowService;
+        private ISceneLoaderService sceneLoader;
+
         private AnimalType animalType;
 
+
+        private void Awake()
+        {
+            sceneLoader = ServicesHub.Container.Single<ISceneLoaderService>();
+        }
 
         private void OnEnable() => animalButton.onClick.AddListener(Button_OnClick);
 
@@ -35,7 +44,7 @@ namespace Menu
         private void Button_OnClick()
         {
             gameFlowService.LastChosenAnimalType = animalType;
-            
+            sceneLoader.Load(GameSceneName);
         }
     }
 }

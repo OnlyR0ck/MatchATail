@@ -1,12 +1,26 @@
-using System;
+using Services;
 using UnityEngine;
 
 namespace Infrastructure
 {
-    public class Bootstrapper : MonoBehaviour
+    public class Bootstrapper : MonoBehaviour, ICoroutineRunner
     {
-        private void Awake() => RegisterServices();
+        private ServicesHub.ServicesHub container;
 
-        private void RegisterServices() => ServicesHub.ServicesHub.Container.RegisterSingle(new GameFlowService());
+        private void Awake()
+        {
+            container = ServicesHub.ServicesHub.Container;
+            
+            RegisterServices();
+            
+            DontDestroyOnLoad(this);
+        }
+
+        private void RegisterServices()
+        {
+            container.RegisterSingle<IGameFlowService>(new GameFlowService());
+            container.RegisterSingle<ISceneLoaderService>(new SceneLoaderService(this));
+            container.RegisterSingle<IAudioService>(new AudioService(this, transform));
+        }
     }
 }

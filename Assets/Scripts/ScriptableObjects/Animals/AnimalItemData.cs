@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace ScriptableObjects.Menu
 {
-    [CreateAssetMenu(fileName = "Data_MenuItemObject", menuName = "Data/Menu/MenuObject")]
     [Serializable]
     public class AnimalItemData
     {

@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b378e6cce084d3bacceb44cfb44f38, type: 3}
+  m_Name: Data_MotherIncorrectAction
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  audioDatas:
+  - m_name: MOTHER_IA_01
+    m_audioClip: {fileID: 8300000, guid: bf2888b0672c3452e9a10ffda49690fd, type: 3}
+    m_looping: 0
+    m_audioMixerGroup: {fileID: 0}
+    m_volume: 0.5
+    m_pitch: 0.3
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
+  - m_name: MOTHER_IA_02
+    m_audioClip: {fileID: 8300000, guid: b1043781e720243b6a13af0212329677, type: 3}
+    m_looping: 0
+    m_audioMixerGroup: {fileID: 0}
+    m_volume: 0.5
+    m_pitch: 0.3
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
+  - m_name: MOTHER_IA_03
+    m_audioClip: {fileID: 8300000, guid: a05badd0d7a36488ea6a827133edae2e, type: 3}
+    m_looping: 0
+    m_audioMixerGroup: {fileID: 0}
+    m_volume: 0.5
+    m_pitch: 0.3
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
+  - m_name: MOTHER_IA_04
+    m_audioClip: {fileID: 8300000, guid: 8119f7796e13f494584a63d10b6de440, type: 3}
+    m_looping: 0
+    m_audioMixerGroup: {fileID: 0}
+    m_volume: 0.5
+    m_pitch: 0.3
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
+  - m_name: MOTHER_IA_05
+    m_audioClip: {fileID: 8300000, guid: 1affc0b42eb9144dc83bb462f69f8eed, type: 3}
+    m_looping: 0
+    m_audioMixerGroup: {fileID: 0}
+    m_volume: 0.5
+    m_pitch: 0.3
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
+  - m_name: MOTHER_IA_06
+    m_audioClip: {fileID: 8300000, guid: 0baf7ea0a17a2409ea9df24789c0d57e, type: 3}
+    m_looping: 0
+    m_audioMixerGroup: {fileID: 0}
+    m_volume: 0.5
+    m_pitch: 0.3
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
+  - m_name: MOTHER_IA_07
+    m_audioClip: {fileID: 8300000, guid: 0f933ede9ff1d4ad1b55c614a4be33ea, type: 3}
+    m_looping: 0
+    m_audioMixerGroup: {fileID: 0}
+    m_volume: 0.5
+    m_pitch: 0.3
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}

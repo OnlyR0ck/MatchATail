@@ -6,14 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderService : ISceneLoaderService
 {
-    private readonly ICoroutineRunner _coroutineRunner;
+    private readonly ICoroutineRunner coroutineRunner;
 
+    
     public SceneLoaderService(ICoroutineRunner coroutineRunner) => 
-        _coroutineRunner = coroutineRunner;
+        this.coroutineRunner = coroutineRunner;
 
+    
     public void Load(string name, Action onLoaded = null) =>
-        _coroutineRunner.StartCoroutine(LoadScene(name, onLoaded));
+        coroutineRunner.StartCoroutine(LoadScene(name, onLoaded));
 
+    
     private IEnumerator LoadScene(string nextScene, Action onLoaded = null)
     {
         if (SceneManager.GetActiveScene().name == nextScene)
@@ -25,8 +28,10 @@ public class SceneLoaderService : ISceneLoaderService
         AsyncOperation waitNextScene = SceneManager.LoadSceneAsync(nextScene);
 
         while (!waitNextScene.isDone)
+        {
             yield return null;
-      
+        }
+
         onLoaded?.Invoke();
     }
 }

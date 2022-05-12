@@ -1,10 +1,12 @@
+using Infrastructure.ServicesHub;
+
 namespace Services
 {
-    public interface IAudioService
+    public interface IAudioService : IService
     {
-        void PlayMusic(string _name);
-        void PlayMusic(int _id);
-        void PlaySFX(string _name);
-        void PlaySFX(int _id);
+        void PlayMusic(string name);
+        void PlayMusic(int id);
+        void PlaySFX(string name);
+        void PlaySFX(int id);
     }
 }
