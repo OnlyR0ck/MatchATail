@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ScriptableObjects.Audio;
 using ScriptableObjects.Menu;
 using Sirenix.OdinInspector;
 
@@ -6,7 +7,7 @@ public static class DataContainer
 {
     #region Fields
 
-    private static readonly Dictionary<System.Type, UnityEngine.Object> dataPool = new Dictionary<System.Type, UnityEngine.Object>();
+    private static readonly Dictionary<int, UnityEngine.Object> dataPool = new Dictionary<int, UnityEngine.Object>();
 
     #endregion
 
@@ -17,6 +18,18 @@ public static class DataContainer
     public static AnimalItemsSequence AnimalItemsSequence =>
         GetData<AnimalItemsSequence>("Data/Animals/Data_AnimalItems");
 
+
+    public static AudioClipsData WhereIsMyTailAudioData =>
+        GetData<AudioClipsData>("Data/Audio/Data_AnimalsWhereIsMyTail");
+
+
+    public static AudioClipsData MotherIncorrectActionData =>
+        GetData<AudioClipsData>("Data/Audio/Data_MotherIncorrectAction");
+
+
+    public static AudioClipsData MotherCorrectActionData =>
+        GetData<AudioClipsData>("Data/Audio/Data_MotherCorrectAction");
+
     #endregion
 
 
@@ -25,16 +38,16 @@ public static class DataContainer
 
     private static TDataType GetData<TDataType>(string path) where TDataType : SerializedScriptableObject
     {
-        System.Type type = typeof(TDataType);
+        int key = path.GetHashCode();
 
-        if (!dataPool.ContainsKey(type))
+        if (!dataPool.ContainsKey(key))
         {
             TDataType data = UnityEngine.Resources.Load<TDataType>(path);
-            dataPool.Add(type, data);
+            dataPool.Add(key, data);
             return data;
         }
 
-        return dataPool[type] as TDataType;
+        return dataPool[key] as TDataType;
     }
 
     #endregion
