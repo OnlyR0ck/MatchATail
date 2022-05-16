@@ -16,6 +16,7 @@ namespace Game.Animals
             this.animation.skeletonDataAsset = skeletonAnimationSkeletonDataAsset;
             this.animation.initialSkinName = "default";
             this.animation.Initialize(true);
+            this.animation.Skeleton.FindSlot("Tail").Attachment = null;
         }
 
 
@@ -47,7 +48,11 @@ namespace Game.Animals
             animation.AnimationName = "Dance";
         }
 
-        public void SetTailAttachment(Attachment attachment) => animation.Skeleton.FindSlot("Tail").Attachment = attachment;
+        public void SetTailAttachment(Attachment attachment)
+        {
+            animation.Skeleton.FindSlot("Tail").Attachment = attachment;
+            animation.Skeleton.UpdateCache();
+        }
 
 
         public Attachment GetTailAttachment(SkeletonData skeletonData)

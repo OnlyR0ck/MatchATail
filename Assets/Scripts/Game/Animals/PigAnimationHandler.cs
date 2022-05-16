@@ -17,6 +17,7 @@ namespace Game.Animals
             this.animation.skeletonDataAsset = skeletonAnimationSkeletonDataAsset;
             this.animation.initialSkinName = SkinName;
             this.animation.Initialize(true);
+            this.animation.Skeleton.FindSlot("Tail").Attachment = null;
         }
 
         public void PlayAnimation(string name, bool isLoop = false)
@@ -48,7 +49,11 @@ namespace Game.Animals
             animation.AnimationName = "Happy_Jump";
         }
 
-        public void SetTailAttachment(Attachment attachment) => animation.Skeleton.FindSlot("Tail").Attachment = attachment;
+        public void SetTailAttachment(Attachment attachment)
+        {
+            animation.Skeleton.FindSlot("Tail").Attachment = attachment;
+            animation.Skeleton.UpdateCache();
+        }
 
 
         public Attachment GetTailAttachment(SkeletonData skeletonData)

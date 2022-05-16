@@ -48,7 +48,11 @@ namespace Game.Animals
             animation.AnimationName = "Jump";
         }
 
-        public void SetTailAttachment(Attachment attachment) => animation.Skeleton.FindSlot("Tail line").Attachment = attachment;
+        public void SetTailAttachment(Attachment attachment)
+        {
+            animation.Skeleton.FindSlot("Tail line").Attachment = attachment;
+            animation.Skeleton.UpdateCache();
+        }
 
 
         public Attachment GetTailAttachment(SkeletonData skeletonData)

@@ -16,6 +16,7 @@ namespace Game.Animals
             this.animation.skeletonDataAsset = skeletonAnimationSkeletonDataAsset;
             this.animation.initialSkinName = "default";
             this.animation.Initialize(true);
+            this.animation.Skeleton.FindSlot("img/Tail").Attachment = null;
         }
 
         public void PlayAnimation(string name, bool isLoop = false)
@@ -48,7 +49,11 @@ namespace Game.Animals
             animation.AnimationName = "Idle";
         }
 
-        public void SetTailAttachment(Attachment attachment) => animation.Skeleton.FindSlot("img/Tail").Attachment = attachment;
+        public void SetTailAttachment(Attachment attachment)
+        {
+            animation.Skeleton.FindSlot("img/Tail").Attachment = attachment;
+            animation.Skeleton.UpdateCache();
+        }
 
 
         public Attachment GetTailAttachment(SkeletonData skeletonData)
