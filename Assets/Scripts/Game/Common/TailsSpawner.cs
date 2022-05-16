@@ -1,4 +1,8 @@
-﻿using ScriptableObjects.Menu;
+﻿using System;
+using Game.Animals;
+using Infrastructure;
+using Infrastructure.ServicesHub;
+using ScriptableObjects.Menu;
 using UnityEngine;
 
 public class TailsSpawner : MonoBehaviour
@@ -12,6 +16,15 @@ public class TailsSpawner : MonoBehaviour
     [SerializeField] private GameObject tailPrefab;
     
     private AnimalItemsSequence animalItems;
+    private IGameFlowService gameFlowService;
+    private ITutorialService tutorialService;
+
+
+    private void Awake()
+    {
+        gameFlowService = ServicesHub.Container.Single<IGameFlowService>();
+        tutorialService = ServicesHub.Container.Single<ITutorialService>();
+    }
 
 
     private void Start()
@@ -20,7 +33,8 @@ public class TailsSpawner : MonoBehaviour
         for (int i = 0; i < animalItems.AnimalItems.Count; i++)
         {
             TailController tailController = Instantiate(tailPrefab, i < leftTailsCount ? leftRoot : rightRoot).GetComponent<TailController>();
-            tailController.Initialize(animalItems.AnimalItems[i]);
+            tutorialService.AddTail(tailController);
+            tailController.Initialize(animalItems.AnimalItems[i], gameFlowService);
         }
     }
 }

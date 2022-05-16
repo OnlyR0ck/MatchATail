@@ -1,5 +1,4 @@
-﻿using System;
-using Infrastructure.ServicesHub;
+﻿using Infrastructure.ServicesHub;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,22 +7,21 @@ public class GameUIController : MonoBehaviour
     [SerializeField] private Button backButton;
     
     private ISceneLoaderService sceneLoader;
-    private const string MenuSceneName = "Menu";
+    private ITutorialService tutorialService;
 
     private void Awake()
     {
         sceneLoader = ServicesHub.Container.Single<ISceneLoaderService>();
+        tutorialService = ServicesHub.Container.Single<ITutorialService>();
     }
 
-    private void OnEnable()
+    private void OnEnable() => backButton.onClick.AddListener(BackButton_OnClick);
+
+    private void BackButton_OnClick()
     {
-        backButton.onClick.AddListener(BackButton_OnClick);
+        tutorialService.DisposeTutorial();
+        sceneLoader.Load(Constants.Scenes.Menu);
     }
 
-    private void BackButton_OnClick() => sceneLoader.Load(MenuSceneName);
-
-    private void OnDisable()
-    {
-        backButton.onClick.RemoveListener(BackButton_OnClick);
-    }
+    private void OnDisable() => backButton.onClick.RemoveListener(BackButton_OnClick);
 }

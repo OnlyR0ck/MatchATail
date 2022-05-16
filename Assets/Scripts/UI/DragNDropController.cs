@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DragNDropController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,IDragHandler
 {
+    public event Action OnTailTouched;
+    
     private Vector3 startPosition;
     private RectTransform rectTransform;
     private Canvas canvas;
@@ -21,6 +24,8 @@ public class DragNDropController : MonoBehaviour, IPointerDownHandler, IPointerU
     {
         startPosition = transform.position;
         canvasGroup.blocksRaycasts = false;
+        
+        OnTailTouched?.Invoke();
     }
 
 
@@ -33,10 +38,4 @@ public class DragNDropController : MonoBehaviour, IPointerDownHandler, IPointerU
         transform.position = startPosition;
         canvasGroup.blocksRaycasts = true;
     }
-}
-
-
-public static class ExtensionHelper
-{
-    public static Vector3 SetZ(this Vector3 vector, float z) => new Vector3(vector.x, vector.y, z);
 }

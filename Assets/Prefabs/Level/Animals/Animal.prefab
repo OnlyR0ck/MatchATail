@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d7aa4ebf1ab2141a69eb710a3973dd1a, type: 2}
+  - {fileID: 2100000, guid: e349f4e5210244a169ebea533b723e32, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 39242485c3b5e4c428cf922f5c83a6a8, type: 2}
-  initialSkinName: 
+  skeletonDataAsset: {fileID: 0}
+  initialSkinName: Pig_pink
   initialFlipX: 0
   initialFlipY: 0
   updateWhenInvisible: 3
@@ -114,7 +114,7 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: 
+  _animationName: Happy_Jump
   loop: 0
   timeScale: 1
 --- !u!1 &4124284216224993563

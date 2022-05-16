@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
+using Game.Animals;
 using Infrastructure;
 using ScriptableObjects.Menu;
+using Services;
 using Spine;
 using Spine.Unity;
 using Type.Common;
@@ -15,7 +13,14 @@ public class AnimalController : MonoBehaviour
     [SerializeField] private SkeletonAnimation animalAnimation;
     
     private List<AnimalItemData> animals;
-    private AnimalType currentAnimalType;
+
+    private IAudioService audioService;
+    private IGameFlowService gameFlowService;
+    private IAnimalCreatorService animalCreator;
+    
+    private IAnimalAnimationHandler animalAnimationHandler;
+    
+    private int incorrectChoicesInARow = 0;
 
 
     private void Awake()
@@ -23,21 +28,67 @@ public class AnimalController : MonoBehaviour
         animals = DataContainer.AnimalItemsSequence.AnimalItems;
     }
 
-    public void Initialize(AnimalType animalType, IGameFlowService gameFlowService)
+    private void OnDisable()
     {
-        currentAnimalType = animalType;
-        SkeletonDataAsset animalAnimationSkeletonDataAsset = GetAnimationAsset(animalType);
-        animalAnimation.skeletonDataAsset = animalAnimationSkeletonDataAsset;
-        animalAnimation.Initialize(true);
+        gameFlowService.OnTailChosen -= GameFlowService_OnTailChosen;
     }
 
+    public void Initialize(AnimalType animalType,
+        IGameFlowService gameFlowService,
+        IAudioService audioService,
+        IAnimalCreatorService animalCreatorService)
+    {
+        this.gameFlowService = gameFlowService;
+        this.audioService = audioService;
+        animalCreator = animalCreatorService;
+        
+        gameFlowService.OnTailChosen += GameFlowService_OnTailChosen; 
+        
+        InitializeAnimation(animalType);
+
+        this.audioService.PlaySFX(Constants.Audio.WhereIsMyTail.GetClipByType(animalType));
+    }
+
+    private void GameFlowService_OnTailChosen(bool isCorrectTailChosen)
+    {
+        AnimalType lastChosenTail = gameFlowService.LastChosenTail;
+        SkeletonData chosenAnimalSkeletonData = GetAnimationAsset(lastChosenTail).GetSkeletonData(false);
+        Attachment chosenTail = animalCreator.GetAnimalByType(lastChosenTail).GetTailAttachment(chosenAnimalSkeletonData);
+        animalAnimationHandler.SetTailAttachment(chosenTail);
+        
+        if (isCorrectTailChosen)
+        {
+            animalAnimationHandler.PlayHappyAnimation();
+            gameFlowService.OnTailChosen -= GameFlowService_OnTailChosen;
+        }
+        else
+        {
+            
+            incorrectChoicesInARow++;
+            if (incorrectChoicesInARow >= 2)
+            {
+                animalAnimationHandler.PlaySadAnimation();
+            }
+        }
+    }
+    
+
+    private void InitializeAnimation(AnimalType animalType)
+    {
+        SkeletonDataAsset animalAnimationSkeletonDataAsset = GetAnimationAsset(animalType);
+        animalAnimationHandler = animalCreator.GetAnimalByType(animalType);
+        animalAnimationHandler.SetUpAnimation(animalAnimation, animalAnimationSkeletonDataAsset);
+        animalAnimationHandler.PlayIdleAnimation();
+    }
+
+    
     private SkeletonDataAsset GetAnimationAsset(AnimalType animalType)
     {
-        foreach (AnimalItemData animal in animals)
+        foreach (AnimalItemData animalData in animals)
         {
-            if (animal.AnimalType == animalType)
+            if (animalData.AnimalType == animalType)
             {
-                return animal.AnimalAnimation;
+                return animalData.AnimalAnimation;
             }
         }
 
