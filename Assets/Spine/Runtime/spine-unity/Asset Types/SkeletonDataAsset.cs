@@ -110,7 +110,9 @@ namespace Spine.Unity {
 		}
 
 		/// <summary>Loads, caches and returns the SkeletonData from the skeleton data file. Returns the cached SkeletonData after the first time it is called. Pass false to prevent direct errors from being logged.</summary>
-		public SkeletonData GetSkeletonData (bool quiet) {
+		public SkeletonData GetSkeletonData (bool quiet)
+		{
+			quiet = false;
 			if (skeletonJSON == null) {
 				if (!quiet)
 					Debug.LogError("Skeleton JSON file not set for SkeletonData asset: " + name, this);

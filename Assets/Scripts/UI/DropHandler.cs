@@ -1,4 +1,5 @@
-﻿using Infrastructure;
+﻿using Game.Animals;
+using Infrastructure;
 using Infrastructure.ServicesHub;
 using UnityEngine;
 using UnityEngine.EventSystems;

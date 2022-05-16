@@ -1,18 +1,14 @@
-﻿using System;
-using Infrastructure;
+﻿using Infrastructure;
 using Infrastructure.ServicesHub;
 using ScriptableObjects.Menu;
 using Type.Common;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Menu
 {
     public class MenuItemController : MonoBehaviour
     {
-        private const string GameSceneName = "Game";
-        
         [SerializeField] private Image animalIcon;
         [SerializeField] private Button animalButton;
 
@@ -44,7 +40,7 @@ namespace Menu
         private void Button_OnClick()
         {
             gameFlowService.LastChosenAnimalType = animalType;
-            sceneLoader.Load(GameSceneName);
+            sceneLoader.Load(Constants.Scenes.Game);
         }
     }
 }
