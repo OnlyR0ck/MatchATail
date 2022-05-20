@@ -13,10 +13,20 @@ namespace Infrastructure
             container = ServicesHub.ServicesHub.Container;
             
             RegisterServices();
+            LockOrientation();
             
             DontDestroyOnLoad(this);
         }
 
+        
+        private void LockOrientation()
+        {
+            Screen.orientation = ScreenOrientation.Landscape;
+            Screen.autorotateToPortrait = false;
+            Screen.autorotateToPortraitUpsideDown = false;
+        }
+
+        
         private void RegisterServices()
         {
             container.RegisterSingle<ISceneLoaderService>(new SceneLoaderService(this));
